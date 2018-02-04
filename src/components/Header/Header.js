@@ -16,9 +16,6 @@ const Header = ({ viewChange }) => (
         Home
       </div>
       <div className="nav-list-item" onClick={viewChange}>
-        Search
-      </div>
-      <div className="nav-list-item" onClick={viewChange}>
         Saved
       </div>
     </div>
