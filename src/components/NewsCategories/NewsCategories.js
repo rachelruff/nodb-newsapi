@@ -8,7 +8,7 @@ export default class NewsCategories extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      article: "",
+      // article: "",
       savedArticles: []
     };
     this.saveArticle = this.saveArticle.bind(this);
@@ -18,6 +18,8 @@ export default class NewsCategories extends Component {
     // let savedArticles = {
     //   article: this.state.article
     // };
+    console.log(article)
+  
     axios
       .post("/api/add/", article)
       .then(response => {
@@ -28,20 +30,13 @@ export default class NewsCategories extends Component {
       .catch(console.log());
   }
 
-  // saveArticle(article) {
-  //   let savedArticles = this.state.savedArticles;
-  //   savedArticles.push(article);
-  //   this.setState({
-  //     savedArticles: [...this.state.savedArticles, savedArticles]
-  //   });
-  // }
-
   render() {
+    console.log(this.state.savedArticles);
     //map through this.props.articles to display individual article cards
     const articles =
       this.props.articles.articles &&
       this.props.articles.articles.map((c, i) => (
-        <ArticleCard key={i} article={c} />
+        <ArticleCard key={i} article={c} saveArticle={this.saveArticle}/>
       ));
 
     return (

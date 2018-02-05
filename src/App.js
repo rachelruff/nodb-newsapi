@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from "./components/Header/Header";
 import HomePage from "./components/HomePage/HomePage";
 import Saved from "./components/Saved/Saved";
-import axios from 'axios';
+
 
 
 
@@ -11,7 +11,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      library: [],
+      
       home: true,
       saved: false,
     };
@@ -36,7 +36,7 @@ class App extends Component {
 
 
   render() {
-    const { library, home, saved} = this.state;
+    const {  home, saved} = this.state;
   
     const changeView = event =>
       this.handleViewChange(event.target.innerText.toLowerCase());
