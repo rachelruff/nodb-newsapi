@@ -18,7 +18,7 @@ export default class NewsCategories extends Component {
     // let savedArticles = {
     //   article: this.state.article
     // };
-    console.log(article)
+    // console.log(article)
   
     axios
       .post("/api/add/", article)
@@ -26,8 +26,10 @@ export default class NewsCategories extends Component {
         this.setState({
           savedArticles: response.data
         });
+        alert('Saved')
       })
-      .catch(console.log());
+      
+      .catch(console.log);
   }
 
   render() {

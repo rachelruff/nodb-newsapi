@@ -7,9 +7,10 @@
     align-items: center;
     display: inline-block;
     margin: 20px 20px;
+    -webkit-box-shadow: 2px 2px 4px 0px rgba(133, 121, 133, 1);
   }
-  /* .article-container hover{
-      border:10px solid black;
+  /* .article-container :hover{
+      width: 180px;
   } */
 
   .article-container img{
@@ -23,4 +24,9 @@
  
 .article-container button{
     margin-left: 37px;
+    background-color: rgb(199, 199, 177);
+}
+
+.button :hover{
+    cursor: pointer;
 }

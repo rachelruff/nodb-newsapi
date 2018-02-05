@@ -13,6 +13,7 @@ app.get("/api/articles", mainCtrl.getArticles);
 app.get('/api/getSaved', mainCtrl.getSaved);
 app.post('/api/add', mainCtrl.saveArticle);
 app.delete('/api/delete/:id', mainCtrl.deleteArticle);
+app.put('/api/changeTitle/:id', mainCtrl.changeTitle);
 
 
 const port = 3001;

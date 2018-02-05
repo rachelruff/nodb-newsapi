@@ -4,6 +4,7 @@ const baseURL = "https://newsapi.org/v2/top-headlines?country=us&category=";
 const apiKey = "&apiKey=bcb046a2b4784c2caff07dbdb1aae077";
 
 let articles = [];
+let title = '';
 
 const getArticles = (req, res, next) => {
   axios
@@ -50,10 +51,17 @@ const deleteArticle = (req, res, next) => {
 const getSaved = (req, res, next) => {
   res.json(articles);
 };
+
+const changeTitle = (req, res, next) => {
+    const {id} = req.params;
+    title[id]=Object.assign({})
+}
+
 module.exports = {
   getArticles,
   saveArticle,
   deleteArticle,
-  getSaved
+  getSaved,
+  changeTitle
 };
 

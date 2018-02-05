@@ -7,7 +7,8 @@ export default class Saved extends Component {
     super(props);
 
     this.state = {
-      savedArticles: []
+      savedArticles: [],
+      title: ''
     };
     this.deleteArticle = this.deleteArticle.bind(this);
   }
@@ -21,9 +22,18 @@ export default class Saved extends Component {
       .catch(console.log());
   }
 
+  changeTitle(){
+    const {title} = this.state;
+    axios
+    .put('/api/changeTitle/${id}', title)
+    .then(response=> this.setState({
+      title:response.data
+    }))
+    .catch(console.log())
+  }
 
   deleteArticle(article) {
-    console.log(article)
+    // console.log(article)
     axios
       .delete(`/api/delete/${article.title}`)
       .then(response => {
@@ -32,7 +42,7 @@ export default class Saved extends Component {
         });
       })
       .catch(console.log());
-      console.log(this.state.savedArticles)
+      // console.log(this.state.savedArticles)
   }
 
   render() {
@@ -45,7 +55,7 @@ export default class Saved extends Component {
       
     return (
       <div className="body">
-        <h1>My Saved Articles</h1>
+        <h1 className='title'>My Saved Articles</h1>
         <div className="articles grid">{articleCards}</div>
       </div>
     );
