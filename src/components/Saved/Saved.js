@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-// import ArticleCard from "../NewsCategories/components/ArticleCard";
+import ArticleCard from "../NewsCategories/components/ArticleCard";
 
 export default class Saved extends Component {
   constructor(props) {
@@ -61,7 +61,7 @@ export default class Saved extends Component {
             maxLength="15"
           />
         )}
-        {/* <ArticleCard {...props} /> */}
+        <ArticleCard {...props} />
         ) )}
       </div>
     );

@@ -7,8 +7,7 @@ export default class NewsCategories extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      index: 0,
-      Articles: [],
+      article: '',
       savedArticles: []
     };
     this.saveArticle = this.saveArticle.bind(this);
@@ -23,13 +22,13 @@ export default class NewsCategories extends Component {
   }
 
   render() {
-    //map through this.props.articles
-    //render article card and pass donw this.props.articles
-    const articles = this.props.articles.map((c,i)=><ArticleCard key={i} article={c}/>
-)
+    //map through this.props.articles to display individual article cards
+    console.log(this.props.articles.articles)
+  const articles = this.props.articles.articles && this.props.articles.articles.map( ( c , i ) => <ArticleCard key={i} article={c}/> )
+
     return (
       <div className="category-container">
-        <h1>{this.props.title}</h1>
+        <h2>{this.props.title}</h2>
         <div className="articles grid">{articles}</div>
       </div>
     );

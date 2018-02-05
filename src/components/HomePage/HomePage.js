@@ -27,11 +27,13 @@ export default class HomePage extends Component {
           sports: response.data.sports,
           tech: response.data.tech
         })
+        // console.log(response.data.ent)
       )
-      .catch(console.log());
+      .catch((err => console.log(err)));
   }
 
   render() {
+      console.log(this.state.ent)
     return (
         
       <div className="category-container">

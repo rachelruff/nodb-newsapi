@@ -11,7 +11,7 @@ app.use(cors());
 
 app.get("/api/articles", mainCtrl.getArticles);
 app.post('/api/post', mainCtrl.addArticle);
-app.put('/api/put', putData);
+// app.put('/api/put', putData);
 app.delete('/api/delete/:id', mainCtrl.deleteArticle);
 
 const port = 3001;
