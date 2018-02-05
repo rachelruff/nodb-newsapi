@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import ArticleCard from "../NewsCategories/components/ArticleCard";
+// import ArticleCard from "../NewsCategories/components/ArticleCard";
 
 export default class Saved extends Component {
   constructor(props) {
@@ -21,8 +21,8 @@ export default class Saved extends Component {
       .then(response => this.setState({ savedArticles: response.data }))
       .catch(console.log());
   }
-//******* */
-//need to look into how to get an id available for the savedArticles contents
+  //******* */
+  //need to look into how to get an id available for the savedArticles contents
 
   deleteSaved(id) {
     axios
@@ -37,33 +37,10 @@ export default class Saved extends Component {
 
   render() {
     const { savedArticles } = this.state;
-    const { editTitle, updateTitle, edit, title } = this.props;
-    //props from app.js
-    const props = {
-      savedArticles,
-      saveArticle: this.deleteSaved,
-      action: "Unsave",
-      defaultVal: "Looks like you're all caught up!"
-    };
-    return (
-      <div className="body">
-        {!edit ? (
-          <h1 className="pointer" title="Click To Change" onClick={editTitle}>
-            {title || "My Articles"}
-          </h1>
-        ) : (
-          <input
-            className="title-change"
-            placeholder={title || "My Articles"}
-            onChange={event => updateTitle(event)}
-            onBlur={editTitle}
-//onBlur is a change effect that will let you edit the box when pointer is over it
-            maxLength="15"
-          />
-        )}
-        <ArticleCard {...props} />
-        ) )}
-      </div>
-    );
+
+    return <div className="body">
+    <h1>
+    My Saved Articles
+    </h1></div>;
   }
 }

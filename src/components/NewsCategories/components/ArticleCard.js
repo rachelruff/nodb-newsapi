@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const ArticleCard = props => (
   <div className="article-container">
     <a href={props.article.url} target="_blank" className="link-container" >
-      <img src={props.article.urlToImage}  alt='IMAGE NOT AVAILABLE' />
+      <img src={props.article.urlToImage}  alt='No Image' />
       <p>{props.article.title}</p>
     </a>
     <button >Save For Later</button>
