@@ -31,7 +31,7 @@ export default class NewsCategories extends Component {
   }
 
   render() {
-    console.log(this.state.savedArticles);
+    // console.log(this.state.savedArticles);
     //map through this.props.articles to display individual article cards
     const articles =
       this.props.articles.articles &&

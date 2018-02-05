@@ -34,12 +34,13 @@ export default class Saved extends Component {
   }
 
   render() {
+    console.log(this.state.savedArticles)
     const articleCards =
-      this.props.articles &&
-      this.props.articles.map((c, i) => (
-        <SavedArticleCard key={i} article={c} />
+      this.state.savedArticles &&
+      this.state.savedArticles.map((c, i) => (
+        <SavedArticleCard key={i} article={c} deleteArticle={this.deleteArticle}/>
       ));
-
+      
     return (
       <div className="body">
         <h1>My Saved Articles</h1>
