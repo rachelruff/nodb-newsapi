@@ -38,10 +38,10 @@ const saveArticle = (req, res, next) => {
 };
 
 const deleteArticle = (req, res, next) => {
-  const { title } = req.params;
+  const { id } = req.params;
   for (var i = 0; i < articles.length; i++) {
-    if (articles[i].title === title) {
-      objArr.splice(i, 1);
+    if (articles[i].title === id) {
+      articles.splice(i, 1);
     }
   }
   res.json(articles);
@@ -57,4 +57,3 @@ module.exports = {
   getSaved
 };
 
-//send up the array on this page

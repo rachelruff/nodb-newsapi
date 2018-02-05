@@ -23,6 +23,7 @@ export default class Saved extends Component {
 
 
   deleteArticle(article) {
+    console.log(article)
     axios
       .delete(`/api/delete/${article.title}`)
       .then(response => {
@@ -31,6 +32,7 @@ export default class Saved extends Component {
         });
       })
       .catch(console.log());
+      console.log(this.state.savedArticles)
   }
 
   render() {
