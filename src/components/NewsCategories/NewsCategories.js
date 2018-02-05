@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./NewsCategories.css";
 import ArticleCard from "./components/ArticleCard";
 import "./NewsCategories.css";
-import axios from 'axios';
+import axios from "axios";
 
 export default class NewsCategories extends Component {
   constructor(props) {
@@ -14,28 +14,27 @@ export default class NewsCategories extends Component {
     this.saveArticle = this.saveArticle.bind(this);
   }
 
+  saveArticle(article) {
+    // let savedArticles = {
+    //   article: this.state.article
+    // };
+    axios
+      .post("/api/add/", article)
+      .then(response => {
+        this.setState({
+          savedArticles: response.data
+        });
+      })
+      .catch(console.log());
+  }
 
-  // saveArticle() {
-  //   let savedArticles = {
-  //     article: this.state.article
-  //   };
-  //   axios
-  //     .post("/api/add/", article)
-  //     .then(response => {
-  //       this.state.savedArticles.push(`/articles/${response.data.id}`);
-  //     })
-  //     .catch(console.log());
+  // saveArticle(article) {
+  //   let savedArticles = this.state.savedArticles;
+  //   savedArticles.push(article);
+  //   this.setState({
+  //     savedArticles: [...this.state.savedArticles, savedArticles]
+  //   });
   // }
-
-
-
-    saveArticle(article) {
-      let savedArticles = this.state.savedArticles;
-      savedArticles.push(article);
-      this.setState({
-        savedArticles: [...this.state.savedArticles, savedArticles]
-      });
-    }
 
   render() {
     //map through this.props.articles to display individual article cards

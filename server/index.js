@@ -10,9 +10,10 @@ app.use(json());
 app.use(cors());
 
 app.get("/api/articles", mainCtrl.getArticles);
-app.post('/api/post', mainCtrl.addArticle);
-// app.put('/api/put', putData);
+app.get('/api/getSaved', mainCtrl.getSaved);
+app.post('/api/add', mainCtrl.saveArticle);
 app.delete('/api/delete/:id', mainCtrl.deleteArticle);
+
 
 const port = 3001;
 app.listen(port, () => {

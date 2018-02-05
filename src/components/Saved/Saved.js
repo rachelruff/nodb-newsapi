@@ -1,32 +1,30 @@
 import React, { Component } from "react";
 import axios from "axios";
-// import ArticleCard from "../NewsCategories/components/ArticleCard";
+import SavedArticleCard from "./components/SavedArticleCard";
 
 export default class Saved extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      savedArticles: [],
-      input: ""
+      savedArticles: []
     };
-    this.deleteSaved = this.deleteSaved.bind(this);
+    this.deleteArticle = this.deleteArticle.bind(this);
   }
 
-  //grabs the articles that have been saved when this component renders. It won't render until the link for the page is clicked so I need to use conditional rendering to get this working. saved=true is the req.query and it will build an object with the key being saved and the value being the string true.
+  //grabs the articles that have been saved when this component renders. It won't render until the link for the page is clicked so I need to use conditional rendering to get this working. 
 
   componentDidMount() {
     axios
-      .get("/api/get?saved=true")
+      .get("/api/getSaved", )
       .then(response => this.setState({ savedArticles: response.data }))
       .catch(console.log());
   }
-  //******* */
-  //need to look into how to get an id available for the savedArticles contents
 
-  deleteSaved(id) {
+
+  deleteArticle(article) {
     axios
-      .delete("api/articles" + id)
+      .delete(`/api/delete/${article.title}`)
       .then(response => {
         this.setState({
           savedArticles: response.data
@@ -36,11 +34,17 @@ export default class Saved extends Component {
   }
 
   render() {
-    const { savedArticles } = this.state;
+    const articleCards =
+      this.props.articles &&
+      this.props.articles.map((c, i) => (
+        <SavedArticleCard key={i} article={c} />
+      ));
 
-    return <div className="body">
-    <h1>
-    My Saved Articles
-    </h1></div>;
+    return (
+      <div className="body">
+        <h1>My Saved Articles</h1>
+        <div className="articles grid">{articleCards}</div>
+      </div>
+    );
   }
 }

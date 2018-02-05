@@ -1,19 +1,18 @@
 import React from "react";
-import "./ArticleCard.css";
+import "./SavedArticleCard.css";
 import newsIcon from "./news-icon.png";
-import { Link } from 'react-router-dom';
 
 
-const ArticleCard = props => (
+const SavedArticleCard = props => (
   <div className="article-container">
     <a href={props.article.url} target="_blank" className="link-container" >
       <img src={props.article.urlToImage}  alt='No Image' />
       <p>{props.article.title}</p>
     </a>
-    <button onClick={() => props.saveArticle(props.article)}>Save For Later</button>
+    <button onClick={() => props.deleteArticle(props.article)}>Remove</button>
   </div>
 );
 
-export default ArticleCard;
+export default SavedArticleCard;
 
 //

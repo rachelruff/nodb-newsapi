@@ -32,19 +32,29 @@ const getArticles = (req, res, next) => {
     );
 };
 
-const addArticle = (req, res, next) => {
+const saveArticle = (req, res, next) => {
   articles.push(req.body);
   res.json(articles);
 };
 
 const deleteArticle = (req, res, next) => {
-  const { id } = req.params;
-  articles.splice(id, 1);
+  const { title } = req.params;
+  for (var i = 0; i < articles.length; i++) {
+    if (articles[i].title === title) {
+      objArr.splice(i, 1);
+    }
+  }
   res.json(articles);
 };
 
+const getSaved = (req, res, next) => {
+  res.json(articles);
+};
 module.exports = {
   getArticles,
-  addArticle,
-  deleteArticle
+  saveArticle,
+  deleteArticle,
+  getSaved
 };
+
+//send up the array on this page
