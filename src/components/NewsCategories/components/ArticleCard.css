@@ -1,20 +1,26 @@
-.link-container{
-    width: 200px;
-    height: 200px;
-    background-color: #777;
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-shadow: 1px 1px 6px #111, -1px -1px 6px #111;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 200px;
-    overflow: hidden;
-    justify-items: center;
-    align-items: center;
-    padding: 15px;
+.article-container{
     cursor: pointer;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 160px;
+    align-items: center;
+    display: inline-block;
+    margin: 20px 20px;
   }
-  .thumb-container:hover{
-    grid-template-rows: 1fr 3fr;
+  .article-container hover{
+      border:10px solid black;
   }
+
+  .article-container img{
+      height: 160px;
+      width: 160px;
+  }
+  .article-container p{
+      text-align: center;
+      margin-top: 0;
+  }
+ 
+.article-container button{
+    margin-left: 37px;
+}

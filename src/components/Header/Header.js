@@ -13,10 +13,10 @@ const Header = ({ viewChange }) => (
     </div>
     <div className="nav-list flex">
       <div className="nav-list-item" onClick={viewChange}>
-        Home
+        HOME
       </div>
       <div className="nav-list-item" onClick={viewChange}>
-        Saved
+        SAVED
       </div>
     </div>
   </header>

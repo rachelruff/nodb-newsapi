@@ -6,14 +6,14 @@ import { Link } from 'react-router-dom';
 
 const ArticleCard = props => (
   <div className="article-container">
-    <a href={props.article.url} className="link-container" >
-      <img src={props.article.urlToImage} alt= {newsIcon} />
+    <a href={props.article.url} target="_blank" className="link-container" >
+      <img src={props.article.urlToImage}  alt='IMAGE NOT AVAILABLE' />
       <p>{props.article.title}</p>
     </a>
-    {/* <button onClick={saveArticle}>Save For Later</button> */}
+    <button >Save For Later</button>
   </div>
 );
 
 export default ArticleCard;
 
-//
+//onClick={saveArticle}
