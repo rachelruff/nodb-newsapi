@@ -5,6 +5,7 @@ import "./Header.css";
 const Header = ({ viewChange }) => (
   <header className="flex">
     <div className="logo-container">
+    {console.log('hi')}
       <img
         src="http://www.clker.com/cliparts/p/E/c/S/s/M/inetrnet-news-reader-md.png"
         alt="logo"
